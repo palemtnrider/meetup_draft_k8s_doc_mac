@@ -1,8 +1,10 @@
-# Brief overview Draft
-## Mark Emeis
-Docker Colorado Springs May 30, 2018
+### Brief overview of Draft
+
+<br/>Mark Emeis
+<br/>Colorado Springs Docker Meetup
+<br/>May 30, 2018
 ---
-# Agenda
+### Agenda
 1. Docker and Kubernetes - great together 
    * Minikube as an alternative 
 1. Helm 
@@ -14,23 +16,23 @@ Docker Colorado Springs May 30, 2018
    * How to setup
    * Example usage
 ---
-# Docker and Kubernetes
-
+#### Docker and Kubernetes
 * Requires the edge channel 
 * Preferences > Kubernetes
    * Enable Kubernetes
    * Show system containers 
-!(K8s setup)["images/docker-config-k8s.png"]
+![K8s setup](images/docker-config-k8s.png)
++++
 * Preferences > Advanced
    * Allocate additional memory 
-!(Advanced setup)["images/docker-config-adv.png"]
+![Advanced setup](images/docker-config-adv.png)
 ---
 
-## Helm
+### Helm
 
 
 ---
-## Tiller (server component)
+### Tiller (server component)
 Server part of helm - manages packages inside the cluster
 
 ---
