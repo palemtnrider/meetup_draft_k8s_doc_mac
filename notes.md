@@ -6,7 +6,7 @@ This is a sipmle expressjs app to illustrate draft
    - Tiller
    - Docker Registry
    - Code scanning accuracy 
-   - What about code bases with multiple dirs and shoudl be separate services?
+   - What about code bases with multiple dirs and should be separate services?
    - Helm repository
 - setup your env run ```eval $(minikube docker-env)```
 - minikube API version is behind docker (version-wise)
@@ -93,4 +93,45 @@ Note that a POD (pause container is created to house your go program)
 
 # Todo:
 - import the k8s dashboard into yipee - https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml 
+
+# TODO
+- Create yipee.io mode for ChartMuseum, download, add to helm
+   - alt is to install the helm chart
+   - how to configure the chart for storage?
+   - download and run - set service to NodePort
+   - add as a repo to helm ```helm repo add cm http://localhost:31144```
+   - ```helm repo list```
+   - ```helm package .```
+   - ```curl --data-binary "@go-v0.1.0.tgz" http://localhost:31144/api/charts```
+   - ```helm search cm\``` - doesn't seem to work
+   - ```curl http://localhost:31144/api/charts``` should show the chart
+   - to install a helm chart into your cluster
+      - ```helm install go --repo http://localhost:31144 --name my-go-example``` odd that we can't use the name of the repo 
+   - Change the version in Chart.yaml
+   - package and push to the repo
+   - ```helm upgrade --repo http://localhost:31144 my-go-example go```
+   - ```helm history my-go-example```
+   - ```helm rollback my-go-example 1```
+   - ```helm delete my-go-example```
+- pull charts from ChartMuseum
+- Config 
+   - Where it is stored, what's in it, etc
+- helm list "Accepts perl filter syntax?"
+- relationship between helm, tiller, draft
+- does draft use a chart repo?  If not why? Configure it to do so?
+
+Helm has a default local repo - available view ```helm serve```
+
+Where did draft put the docker image?
+
+What is a toml file?
+
+```draft up``` creates a Dockerfile, builds the image, deploys it to kubernetes.  use ```draft connect``` to setup a proxy to the service
+
+## Example use case
+- create the chart, deploy
+- update, re-deploy
+- rollback
+
+
 
