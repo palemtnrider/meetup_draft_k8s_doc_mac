@@ -45,17 +45,22 @@ Note:   Minikube can also be used
 +++
 #### Kubernetes Dashboard
 * run the kubernets dashboard <br/>
-```kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml```
+```
+kubectl create -f \
+https://raw.githubusercontent.com/kubernetes/\
+dashboard/master/src/deploy/\
+recommended/kubernetes-dashboard.yaml
+```
 
 * Open a proxy server to the cluster `kubectl proxy`
 
-* Hit the dashboard at ```http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default```
+* Hit the dashboard at http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default```
 
 +++
 #### Kubernetes Dashboard
 ![Dashboard](images/k8s-dashboard.png)
 
-Notes: More on the dashboard later
+Note: More on the dashboard later
 ---
 #### Helm
 Package manager for applications.  Think RPM/Homebrew/Apt
