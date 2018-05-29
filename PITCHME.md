@@ -61,20 +61,22 @@ Notes: More on the dashboard later
 #### Helm
 Package manager for applications.  Think RPM/Homebrew/Apt
 
-Comprised of 3 components
+Package is a chart which is a template and values
+
+Three main components
 - Helm - the client
 - Tiller - the server
 - Repo - Repository for _charts_ 
 
-Charts are what you build and deploy.  Charts are comprised of 
+Note: Charts are what you build and deploy.  Charts are comprised of 
 - Templates - manifest files for the kubernetes objects
 - Values.yaml - A values file
-
-Upon deployment the values files gets combined templates to create your _chart_
 
 +++
 #### Tiller 
 Server component of helm.  Manages the lifecycle of your _charts_
+
+Upon deployment the values files gets combined templates to create your _chart_
 
 +++
 #### Helm Repos
@@ -97,6 +99,7 @@ Note: You can also download as a helm chart - however configuring in Yipee.io is
 #### Helm setup 
 * Install via brew `brew install kubernetes-helm`
 * `helm init`
+* Config lives in ~/.helm
 
 +++
 #### Working with helm
@@ -121,9 +124,39 @@ Note:
    - ```helm delete my-go-example```
 ---
 #### Draft
+Tool to simplify creating, installing, testing, etc of _charts_ for **deverlopers**
+
+Auto generates a Dockerfile and the chart scaffolding
+
+Install via homebrew - 
+`brew install draft` 
+
+Config lives in ~/.draft
 
 Note:
 Each build creates an image; 
+I have had to reset draft on occasion
+
++++
+#### Draft getting started
+* `draft init` - create default local config
+* `draft create` - create a project in this directory
+* `draft up` - build, install, and run this chart on the configured k8s system.
+* `draft connect` - sets up a proxy to the services
+Note: 
+- It does use an 'onbuild' image which can be pretty large
+- Watch space as each up creates a new version
+
++++ 
+### Draft demo
+* Go example services
+* Generate
+* run 
+
+Note: 
+- create the chart, deploy
+- update, re-deploy
+- rollback
 ---
 #### Resources
 * [Docker mac edge channel](https://docs.docker.com/docker-for-mac/edge-release-notes/)
