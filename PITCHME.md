@@ -44,13 +44,12 @@ Note:   Minikube can also be used
 * --help on CLI commands
 +++
 #### Kubernetes Dashboard
-* run the kubernets dashboard 
-`kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
-`
+* run the kubernets dashboard <br/>
+```kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml```
 
 * Open a proxy server to the cluster `kubectl proxy`
 
-* Hit the dashboard at `http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default`
+* Hit the dashboard at ```http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default```
 
 +++
 #### Kubernetes Dashboard
@@ -72,6 +71,7 @@ Note: Charts are what you build and deploy.  Charts are comprised of
 - Templates - manifest files for the kubernetes objects
 - Values.yaml - A values file
 
+Created by Dias which was purchased by Microsoft
 +++
 #### Tiller 
 Server component of helm.  Manages the lifecycle of your _charts_
@@ -164,3 +164,4 @@ Note:
 * [Draft](https://github.com/Azure/draft)
 * [Chart Museum](https://github.com/kubernetes-helm/chartmuseum)
 * [Public helm charts](https://github.com/kubernetes/charts)
+* [GitPitch - Presentations in Github](https://gitpitch.com)
