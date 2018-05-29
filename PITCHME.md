@@ -54,7 +54,7 @@ recommended/kubernetes-dashboard.yaml
 
 * Open a proxy server to the cluster `kubectl proxy`
 
-* Hit the dashboard at http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default```
+* Hit the dashboard at http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default
 
 +++
 #### Kubernetes Dashboard
