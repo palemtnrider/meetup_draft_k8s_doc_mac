@@ -44,7 +44,7 @@ Note:   Minikube can also be used
 * --help on CLI commands
 +++
 #### Kubernetes Dashboard
-* run the kubernets dashboard <br/>
+* run the kubernetes dashboard <br/>
 ```
 kubectl create -f \
 https://raw.githubusercontent.com/kubernetes/\
@@ -57,6 +57,18 @@ recommended/kubernetes-dashboard.yaml
 * Hit the dashboard at http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default
 
 +++
+#### Dashboard alt setup
+Instead of setting up the proxy and going through the API 
+```
+kubedash() {
+    POD=$(kubectl get pod --namespace=kube-system | grep dashboard | cut -d ' ' -f 1 -)
+    kubectl port-forward $POD 8443:8443 --namespace=kube-system
+}
+```
+Then hit https://localhost:8443
+
+
++++
 #### Kubernetes Dashboard
 ![Dashboard](images/k8s-dashboard.png)
 
@@ -65,7 +77,7 @@ Note: More on the dashboard later
 #### Helm
 Package manager for applications.  Think RPM/Homebrew/Apt
 
-Package is a chart which is a template and values
+Package is a chart which consists of a template and values
 
 Three main components
 - Helm - the client
@@ -85,7 +97,7 @@ Upon deployment the values files gets combined templates to create your _chart_
 
 +++
 #### Helm Repos
-Simple web server that stores your charts and makes them available for searching and retrieving.  Uses semantic versioning 
+Web application that stores your charts and makes them available for searching and retrieving.  Uses semantic versioning 
 
 Options
 * local one
@@ -129,7 +141,7 @@ Note:
    - ```helm delete my-go-example```
 ---
 #### Draft
-Tool to simplify creating, installing, testing, etc of _charts_ for **deverlopers**
+Tool to simplify creating, installing, testing, etc of _charts_ for **developers**
 
 Auto generates a Dockerfile and the chart scaffolding
 
@@ -149,7 +161,7 @@ I have had to reset draft on occasion
 * `draft up` - build, install, and run this chart on the configured k8s system.
 * `draft connect` - sets up a proxy to the services
 Note: 
-- It does use an 'onbuild' image which can be pretty large
+- It does use an `onbuild` image which can be pretty large
 - Watch space as each up creates a new version
 
 +++ 
