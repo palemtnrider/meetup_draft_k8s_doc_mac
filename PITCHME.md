@@ -95,6 +95,8 @@ Server component of helm.  Manages the lifecycle of your _charts_
 
 Upon deployment the values files gets combined templates to create your _chart_
 
+Use `helm init --upgrade` to upgrade tiller to match the helm client
+
 +++
 #### Helm Repos
 Web application that stores your charts and makes them available for searching and retrieving.  Uses semantic versioning 
@@ -174,6 +176,7 @@ Note:
 - create the chart, deploy
 - update, re-deploy
 - rollback
+- using helm CLI directly can confuse draft.
 ---
 #### Resources
 * [Docker mac edge channel](https://docs.docker.com/docker-for-mac/edge-release-notes/)
